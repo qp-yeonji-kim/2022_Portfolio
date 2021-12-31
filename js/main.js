@@ -1,60 +1,3 @@
-/*   
-  const menu_arr = ['대한항공', '이케아', '나이키']
-
-  $('.sc_project').each(function(index, item){
-    let Top = $(this).scrollTop();
-  });
-
-  $(window).scroll(function(){
-    let curTop = $(window).scrollTop();
-    let contTop = $('.sc_project').scrollTop();
-    배열로 만드는 방법?
-    if (curTop = contTop){
-      $('.pagination .cur').text($('.sc_project').index());
-      $('.pagination .page_nmae').text(menu_arr[idx]);
-    }
-  }) 
-
-https://codepen.io/ChrisCrossCrash/pen/YzwjKYG
-*/
-
-/* 
-
-  intro = gsap.timeline({
-    scrollTriger:{
-
-    }
-
-    intro.from('mtxt')
-    intro.from('y: -100')
-    intro.from('y: -100')
-    intro.from('pen')
-    intro.from(intro'y: -100' 1.2)
-    intro.from(intro img'y: -10', .1)<-속도 조절
-
-  })
-
-  const motion
-
-  motion.pause();
-
-  motion01.restart();
-
-  reverse
-
-
-*/
-
-
-/* each index item 
-변수 처리를 해줘야 함 자식들..
-$(this).find('우쨰구')
-
-물어보기...
-
-snap
-
-*/
 $(function () {
   $('.cntMotion > *').each(function (index, item) {
     let triggerEl = $(this).parents('section');
@@ -64,11 +7,11 @@ $(function () {
       scrollTrigger: {
         trigger: triggerEl,
         start: 'top top',
-        end: '+=5000',
+        end: '+=4000',
         scrub: 1,
         pin: true,
       }
-    })
+    });
 
     tl.from(item, {
         yPercent: yVal,
@@ -80,6 +23,24 @@ $(function () {
         opacity: 0,
         delay: .2,
       })
+  });
+
+  $(window).scroll(function(){
+    if($(window).scrollTop() >= $('.first_int').offset().top){
+      $('.pagination .page_name').text('PC Page_대한항공');
+    }
+  })
+
+  $(window).scroll(function(){
+    if($(window).scrollTop() >= $('.second_int').offset().top){
+      $('.pagination .page_name').text('Mobile Page_이케아');
+    }
+  })
+
+  $(window).scroll(function(){
+    if($(window).scrollTop() >= $('.third_int').offset().top){
+      $('.pagination .page_name').text('Responsible Page_나이키');
+    }
   })
 
   gsap.to('.first_summary .cnt_area_left .cnt_wrap', {
@@ -167,6 +128,5 @@ $(function () {
 
 
 
-    
-  /* 끝 */
+  
 })

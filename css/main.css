@@ -4,7 +4,7 @@
   height: 100vh;
   background: url('../images/bg01.jpg') no-repeat center;
   background-size: cover;
-  
+
   /*   -ms-overflow-style: none;
   scrollbar-width: none; */
 }
@@ -190,7 +190,6 @@
   width: 80%;
   transition: all .5s;
   opacity: 0;
-  /* 어색해서 버림 padding: calc((100% - 26px)/2) calc((100% - 200px)/ 2); */
 }
 
 .summary .cnt_area_right .cnt02 {
@@ -395,27 +394,33 @@
   flex-direction: column;
   z-index: 10;
 }
-.summary .cnt_area_right .cnt04 .title_wrap{
+
+.summary .cnt_area_right .cnt04 .title_wrap {
   font-size: var(--font_36px);
   font-weight: 700;
   line-height: 1.2;
 }
-.summary .cnt_area_right .cnt04 .title_wrap p{
+
+.summary .cnt_area_right .cnt04 .title_wrap p {
   overflow: hidden;
 }
-.summary .cnt_area_right .cnt04 .title_wrap span{
+
+.summary .cnt_area_right .cnt04 .title_wrap span {
   display: block;
 }
-.summary .cnt_area_right .cnt04 .description{
+
+.summary .cnt_area_right .cnt04 .description {
   margin-top: 80px;
 }
-.summary .cnt_area_right .cnt04 .description ul li{
+
+.summary .cnt_area_right .cnt04 .description ul li {
   position: relative;
   line-height: 90px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   overflow: hidden;
 }
-.summary .cnt_area_right .cnt04 .description ul li::after{
+
+.summary .cnt_area_right .cnt04 .description ul li::after {
   content: '';
   position: absolute;
   width: 0;
@@ -425,17 +430,21 @@
   background-color: #fff;
   transition: width .5s;
 }
-.summary .cnt_area_right .cnt04 .description ul li:hover::after, .summary .cnt_area_right .cnt04 .description ul li:focus::after{
+
+.summary .cnt_area_right .cnt04 .description ul li:hover::after,
+.summary .cnt_area_right .cnt04 .description ul li:focus::after {
   width: 100%;
 }
-.summary .cnt_area_right .cnt04 .description ul li p .num{
+
+.summary .cnt_area_right .cnt04 .description ul li p .num {
   display: inline-block;
   vertical-align: middle;
   margin-right: 20px;
   font-size: var(--font_18px);
   font-weight: 700;
 }
-.summary .cnt_area_right .cnt04 .description ul li p .txt{
+
+.summary .cnt_area_right .cnt04 .description ul li p .txt {
   display: inline-block;
   vertical-align: middle;
   font-size: var(--font_34px);
