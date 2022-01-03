@@ -23,61 +23,52 @@
 
 .sc_intro .img_wrap {
   position: absolute;
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 210px;
   left: 50%;
-  top: 14%;
-  overflow: hidden;
+  transform: translateX(-50%);
+  top: 18%;
+  z-index: 100;
 }
 
 .sc_intro .img_wrap img {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  transition: all .5s;
 }
+
 
 .sc_intro .title_area {
   position: absolute;
-  width: 540px;
-  height: 120px;
-  left: calc(50% - 270px);
-  top: calc(50% - 60px);
+  top: 44%;
   display: flex;
+  width: 100%;
   align-items: center;
+  font-family: MapoDacapo;
+  font-size: 200px;
+  font-style: italic;
+  line-height: 1.2;
   overflow: hidden;
 }
-
-.sc_intro .title_area h2 {
-  display: block;
-  width: 100%;
-  font-size: 120px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.sc_intro .title_area>*:first-child span {
-  text-align: left;
-}
-
-.sc_intro .title_area>*:last-child span {
-  text-align: right;
+.sc_intro .title_area h2{
+  margin: 0 auto;
 }
 
 .sc_intro .announce {
   position: absolute;
   bottom: 5%;
-  left: calc(50% - 80px);
-  width: 160px;
-  height: 14px;
-  display: flex;
-  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
   overflow: hidden;
 }
 
 .sc_intro .announce span {
   display: block;
-  width: 100%;
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -90,51 +81,37 @@
   background-size: cover;
 }
 
-/* .sc_project .bg{
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background: url('../images/bg02.jpg') no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-} */
-
 .first_int .title_area {
   position: absolute;
-  left: calc(50% - 400px);
-  top: calc(50% - 200px);
-  width: 800px;
-  height: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: MapoDacapo;
   font-size: 120px;
-  font-weight: 700;
+  line-height: 1.2;
+  font-style: italic;
+}
+.first_int .title_area > *{
+  position: relative;
+  overflow: hidden;
+  padding: 0 10px;
 }
 
 .first_int .title_area h2 {
-  height: 140px;
-  overflow: hidden;
+  left: -20%;
 }
 
 .first_int .title_area h2 span {
   display: block;
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
 }
 
-.first_int .title_area p {
-  height: 140px;
+.first_int .title_area p:nth-child(2) {
   text-align: center;
-  overflow: hidden;
 }
 
-.first_int .title_area p:first-child {}
-
-.first_int .title_area p:last-child {
+.first_int .title_area p:nth-child(3) {
   text-align: right;
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
+  right: -20%;
 }
 
 .first_int .title_area p span {
@@ -187,30 +164,32 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  /* width: 80%; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: all .5s;
   opacity: 0;
 }
 
 .summary .cnt_area_right .cnt02 {
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* background: tomato; */
 }
 
 .summary .cnt_area_right .cnt02 .sub_title p {
   display: block;
-  height: 56px;
-  font-size: 46px;
-  font-weight: 700;
+  font-size: 50px;
+  font-family:  GowunBatang;
   line-height: 1.4;
+  font-style: italic;
   overflow: hidden;
 }
 
@@ -222,7 +201,8 @@
   margin-top: 40px;
   display: flex;
   justify-content: end;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.2;
   overflow: hidden;
   /* background: olive; */
 }
@@ -328,8 +308,8 @@
 }
 
 .summary .cnt_area_right .cnt03 .img_wrap {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -344,6 +324,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -396,9 +377,11 @@
 }
 
 .summary .cnt_area_right .cnt04 .title_wrap {
-  font-size: var(--font_36px);
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: GowunBatang;
+  font-size: 50px;
+  line-height: 1.4;
+  font-style: italic;
+  overflow: hidden;
 }
 
 .summary .cnt_area_right .cnt04 .title_wrap p {
@@ -416,8 +399,8 @@
 .summary .cnt_area_right .cnt04 .description ul li {
   position: relative;
   line-height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
 }
 
 .summary .cnt_area_right .cnt04 .description ul li::after {

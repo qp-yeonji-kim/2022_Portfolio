@@ -1,5 +1,5 @@
 body{
-  font-family: GothicA1, NtSans;
+  font-family: GowunBatang, NtSans;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
@@ -22,6 +22,7 @@ header .menu_btn{
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: #fff;
 }
 
 header .menu_btn i{
@@ -49,23 +50,23 @@ header .menu_btn i span:last-child{
 }
 header .menu_btn > span{
   margin-left: 20px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 header .contact_btn{
   position: absolute;
   right: 0;
-  font-size: 12px;
+  font-size: 14px;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
 .pagination {
+  display: none;
   position: fixed;
   left: -2%;
   bottom: 14%;
-  display: flex;
   font-size: 12px;
   line-height: 14px;
   z-index: 1000;

@@ -1,45 +1,86 @@
 $(function () {
-  $('.cntMotion > *').each(function (index, item) {
+  let introImg = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.sc_intro',
+      start: '1px top',
+      end: '+=2000',
+      scrub: 1,
+      pin: true,
+    }
+  })
+
+  introImg
+    .from('.sc_intro .img_wrap', {
+      opacity: 0,
+      yPercent: -50,
+    })
+    .to('.sc_intro .img_wrap', {
+      opacity: 0,
+      yPercent: -50,
+      delay: .3,
+    })
+
+  let introTitle = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.sc_intro',
+      start: "1px top",
+      end: '+=2000',
+      pin: '.sc_intro',
+      scrub: 1,
+    },
+  });
+
+  let introTxt = new SplitType('.sc_intro .title_area h2', {
+    types: 'words, chars',
+  });
+  introTitle.from(introTxt.chars, {
+      yPercent: 100,
+      stagger: 0.1,
+    })
+    .to(introTxt.chars, {
+      yPercent: -100,
+      delay: .3,
+    })
+
+  $('.sc_project .title_area > * span').each(function (index, item) {
     let triggerEl = $(this).parents('section');
-    let yVal = $(this).data('y') ? $(this).data('y') : 200;
 
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: triggerEl,
         start: 'top top',
-        end: '+=4000',
+        end: '+=2000',
         scrub: 1,
         pin: true,
       }
     });
 
     tl.from(item, {
-        yPercent: yVal,
+        yPercent: 200,
         opacity: 0,
       })
       .to(item, {
         immediateRender: false,
         yPercent: -200,
-        opacity: 0,
-        delay: .2,
+        delay: .3,
       })
   });
 
-  $(window).scroll(function(){
-    if($(window).scrollTop() >= $('.first_int').offset().top){
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() >= $('.first_int').offset().top) {
+      $('.pagination').css({
+        'display': 'flex'
+      });
       $('.pagination .page_name').text('PC Page_대한항공');
-    }
-  })
-
-  $(window).scroll(function(){
-    if($(window).scrollTop() >= $('.second_int').offset().top){
+    } else if ($(window).scrollTop() >= $('.second_int').offset().top) {
       $('.pagination .page_name').text('Mobile Page_이케아');
-    }
-  })
-
-  $(window).scroll(function(){
-    if($(window).scrollTop() >= $('.third_int').offset().top){
+    } else if ($(window).scrollTop() >= $('.third_int').offset().top) {
       $('.pagination .page_name').text('Responsible Page_나이키');
+    } else {
+      $('.pagination').css({
+        'display': 'none'
+      });
     }
   })
 
@@ -59,29 +100,29 @@ $(function () {
       end: 'bottom top',
       scrub: .1,
     },
-    opacity: 1,
+    opacity: .9,
   })
 
   let firstPjSum = gsap.timeline({
     scrollTrigger: {
       trigger: $('.first_summary'),
       start: 'top top',
-      end: '+=5000',
+      end: '+=8000',
       scrub: 1,
       pin: true,
     }
   })
-
   firstPjSum
     .from('.first_summary .cnt_area_right .cnt02 .fade', {
       yPercent: 200,
       opacity: 0,
+      stagger: 0.1,
     })
     .to('.first_summary .cnt_area_right .cnt02 .fade', {
       immediateRender: false,
       yPercent: -200,
       opacity: 0,
-      delay: .2,
+      delay: .3,
     })
     .to('.first_summary .cnt_area_right .cnt03', {
       display: 'block',
@@ -111,6 +152,10 @@ $(function () {
       display: 'flex',
       delay: .2,
     }, 'cnt03-2')
+    .from('.first_summary .cnt_area_right .cnt04 li', {
+      borderBottom: '1px solid transparent',
+      delay: .2,
+    }, 'cnt03-2')
     .from('.first_summary .cnt_area_right .cnt04 .fade', {
       yPercent: 200,
       opacity: 0,
@@ -125,8 +170,8 @@ $(function () {
     .to('.first_summary .cnt_area_right .cnt04', {
       display: 'none',
     }, 'cnt04')
-
-
-
-  
+    .to('.first_summary .cnt_area_right .cnt04 li', {
+      borderBottom: '1px solid transparent',
+      delay: .2,
+    }, 'cnt04')
 })

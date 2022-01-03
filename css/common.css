@@ -12,38 +12,26 @@
 	--color_white: #fdfdfd;
 }
 
-
 @font-face {
-	font-family: THEmpgt;
+	font-family: MapoDacapo;
 	font-weight: 400;
 	font-style: normal;
-	src: url("../font/THEmpgtR.eot");
-	src: url("../font/THEmpgtR.eot#iefix") format("embedded-opentype"),
-		url("../font/THEmpgtR.woff") format("woff"),
-		url("../font/THEmpgtR.woff2") format("woff2"),
-		url("../font/THEmpgtR.otf") format("opentype");
+	src: url("../font/MapoDacapo.eot");
+	src: url("../font/MapoDacapo.eot#iefix") format("embedded-opentype"),
+		url("../font/MapoDacapo.woff") format("woff"),
+		url("../font/MapoDacapo.woff2") format("woff2"),
+		url("../font/MapoDacapo.otf") format("opentype");
 }
 
 @font-face {
-	font-family: THEmpgt;
-	font-weight: 500;
+	font-family: GowunBatang;
+	font-weight: 400;
 	font-style: normal;
-	src: url("../font/THEmpgtM.eot");
-	src: url("../font/THEmpgtM.eot#iefix") format("embedded-opentype"),
-		url("../font/THEmpgtM.woff") format("woff"),
-		url("../font/THEmpgtM.woff2") format("woff2"),
-		url("../font/THEmpgtM.otf") format("opentype");
-}
-
-@font-face {
-	font-family: THEmpgt;
-	font-weight: 700;
-	font-style: normal;
-	src: url("../font/THEmpgtL.eot");
-	src: url("../font/THEmpgtL.eot#iefix") format("embedded-opentype"),
-		url("../font/THEmpgtL.woff") format("woff"),
-		url("../font/THEmpgtL.woff2") format("woff2"),
-		url("../font/THEmpgtL.otf") format("opentype");
+	src: url("../font/GowunBatang-Regular.eot");
+	src: url("../font/GowunBatang-Regular.eot#iefix") format("embedded-opentype"),
+		url("../font/GowunBatang-Regular.woff") format("woff"),
+		url("../font/GowunBatang-Regular.woff2") format("woff2"),
+		url("../font/GowunBatang-Regular.otf") format("opentype");
 }
 
 @font-face {
@@ -68,49 +56,6 @@
 		url("../font/NotoSansKR-Bold.otf") format("opentype");
 }
 
-@font-face {
-	font-family: GothicA1;
-	font-weight: 400;
-	font-style: normal;
-	src: url("../font/GothicA1-Regular.eot");
-	src: url("../font/GothicA1-Regular.eot#iefix") format("embedded-opentype"),
-		url("../font/GothicA1-Regular.woff") format("woff"),
-		url("../font/GothicA1-Regular.woff2") format("woff2"),
-		url("../font/GothicA1-Regular.otf") format("opentype");
-}
-
-@font-face {
-	font-family: GothicA1;
-	font-weight: 700;
-	font-style: normal;
-	src: url("../font/GothicA1-Bold.eot");
-	src: url("../font/GothicA1-Bold.eot#iefix") format("embedded-opentype"),
-		url("../font/GothicA1-Bold.woff") format("woff"),
-		url("../font/GothicA1-Bold.woff2") format("woff2"),
-		url("../font/GothicA1-Bold.otf") format("opentype");
-}
-
-@font-face {
-	font-family: GothicA1;
-	font-weight: 800;
-	font-style: normal;
-	src: url("../font/GothicA1-Black.eot");
-	src: url("../font/GothicA1-Black.eot#iefix") format("embedded-opentype"),
-		url("../font/GothicA1-Black.woff") format("woff"),
-		url("../font/GothicA1-Black.woff2") format("woff2"),
-		url("../font/GothicA1-Black.otf") format("opentype");
-}
-
-@font-face {
-	font-family: BlackHanSans;
-	font-weight: 800;
-	font-style: normal;
-	src: url("../font/BlackHanSans-Regular.eot");
-	src: url("../font/BlackHanSans-Regular.eot#iefix") format("embedded-opentype"),
-		url("../font/BlackHanSans-Regular.woff") format("woff"),
-		url("../font/BlackHanSans-Regular.woff2") format("woff2"),
-		url("../font/BlackHanSans-Regular.otf") format("opentype");
-}
 
 .blind{
   position: absolute;
