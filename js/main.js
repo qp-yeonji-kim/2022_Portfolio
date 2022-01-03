@@ -13,11 +13,13 @@ $(function () {
     .from('.sc_intro .img_wrap', {
       opacity: 0,
       yPercent: -50,
+      duration: 2,
     })
     .to('.sc_intro .img_wrap', {
       opacity: 0,
       yPercent: -50,
       delay: .3,
+      duration: 2,
     })
 
   let introTitle = gsap.timeline({
@@ -25,8 +27,8 @@ $(function () {
       trigger: '.sc_intro',
       start: "1px top",
       end: '+=2000',
-      pin: '.sc_intro',
       scrub: 1,
+      pin: true,
     },
   });
 
@@ -36,10 +38,12 @@ $(function () {
   introTitle.from(introTxt.chars, {
       yPercent: 100,
       stagger: 0.1,
+      duration: 2,
     })
     .to(introTxt.chars, {
       yPercent: -100,
       delay: .3,
+      duration: 2,
     })
 
   $('.sc_project .title_area > * span').each(function (index, item) {
@@ -68,6 +72,8 @@ $(function () {
 
 
   $(window).scroll(function () {
+    console.log($(window).scrollTop());
+    console.log($('.first_int').offset().top);
     if ($(window).scrollTop() >= $('.first_int').offset().top) {
       $('.pagination').css({
         'display': 'flex'
@@ -83,6 +89,32 @@ $(function () {
       });
     }
   })
+
+/* 
+  $('.sc_project .title_area > * span').each(function (index, item) {
+    let triggerEl = $(this).parents('section');
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: 'top top',
+        end: '+=2000',
+        scrub: 1,
+        pin: true,
+      }
+    });
+
+    tl.from(item, {
+        yPercent: 200,
+        opacity: 0,
+      })
+      .to(item, {
+        immediateRender: false,
+        yPercent: -200,
+        delay: .3,
+      })
+  });
+*/
 
   gsap.to('.first_summary .cnt_area_left .cnt_wrap', {
     scrollTrigger: {

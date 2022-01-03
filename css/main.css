@@ -4,7 +4,7 @@
   height: 100vh;
   background: url('../images/bg01.jpg') no-repeat center;
   background-size: cover;
-
+  background-attachment: fixed;
   /*   -ms-overflow-style: none;
   scrollbar-width: none; */
 }
@@ -72,6 +72,16 @@
   text-align: center;
 }
 
+.sc_intro_bg{
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/bg01.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .first_int {
   position: relative;
   width: 100%;
@@ -79,6 +89,7 @@
   position: relative;
   background: url('../images/bg02.jpg') no-repeat center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .first_int .title_area {
@@ -128,12 +139,22 @@
   display: block;
 }
 
+.first_int_bg{
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/bg02.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .summary {
   position: relative;
   width: 100%;
   height: 100vh;
   background-color: #130559;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .summary .cnt_area {
@@ -423,12 +444,12 @@
   display: inline-block;
   vertical-align: middle;
   margin-right: 20px;
-  font-size: var(--font_18px);
+  font-size: 18px;
   font-weight: 700;
 }
 
 .summary .cnt_area_right .cnt04 .description ul li p .txt {
   display: inline-block;
   vertical-align: middle;
-  font-size: var(--font_34px);
+  font-size: 28px;
 }
