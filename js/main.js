@@ -91,7 +91,7 @@ $(function () {
     let triggerEl = $(this);
     let l_cnt01Wrap = $(this).find('.cnt_area_left .cnt_wrap');
     let l_cnt01 = $(this).find('.cnt_area_left .cnt_wrap .cnt01');
-    let r_cnt02 = $(this).find('.cnt_area_right .cnt02 .description p');
+    let r_cnt02 = $(this).find('.cnt_area_right .cnt02 span');
     let l_cnt03Cover01 = $(this).find('.cnt_area_left .cnt03 .img_cover01');
     let l_cnt03Cover02 = $(this).find('.cnt_area_left .cnt03 .img_cover02');
     let l_cnt03Wrap = $(this).find('.cnt_area_left .cnt03 .img_wrap');
@@ -99,7 +99,8 @@ $(function () {
     let r_cnt03Cover01 = $(this).find('.cnt_area_right .cnt03 .img_cover01');
     let l_cnt04 = $(this).find('.cnt_area_left .cnt04');
     let r_cnt03Cover02 = $(this).find('.cnt_area_right .cnt03 .img_cover02');
-    let r_cnt04Txt = $(this).find('.cnt_area_right .cnt04 .description p')
+    let r_cnt04Tit = $(this).find('.cnt_area_right .cnt04 .title_wrap span')
+    let r_cnt04Txt = $(this).find('.cnt_area_right .cnt04 .description span')
     let r_cnt04Li = $(this).find('.cnt_area_right .cnt04 li')
     let r_cnt04 = $(this).find('.cnt_area_right .cnt04');
 
@@ -109,8 +110,7 @@ $(function () {
         start: 'top bottom',
         end: 'bottom top',
         scrub: 1,
-        duration: 1,
-        markers: true,
+        duration: .4,
       },
       width: '100%',
     })
@@ -128,7 +128,7 @@ $(function () {
       scrollTrigger: {
         trigger: triggerEl,
         start: 'top top',
-        end: '+=9000',
+        end: '+=8000',
         scrub: 1,
         pin: true,
       }
@@ -148,9 +148,11 @@ $(function () {
       })
       .to(l_cnt03Cover01, {
         width: '50%',
+        duration: .4,
       }, 'cnt03-1')
       .to(l_cnt03Cover02, {
         height: '50%',
+        duration: .4,
       }, 'cnt03-1')
       .to(r_cnt03, {
         display: 'block',
@@ -172,27 +174,40 @@ $(function () {
       }, 'cnt03-2')
       .to(r_cnt04, {
         display: 'flex',
-        delay: .2,
       }, 'cnt03-2')
       .from(r_cnt04Li, {
         opacity: 0,
       }, 'cnt03-3')
+      .from(r_cnt04Tit, {
+        yPercent: 200,
+        opacity: 0,
+        duration: .4,
+        stagger: 0.1,
+      }, 'cnt03-3')
       .from(r_cnt04Txt, {
         yPercent: 200,
         opacity: 0,
-        delay: .2,
+        duration: .4,
       }, 'cnt03-3')
       .to(r_cnt04Txt, {
         immediateRender: false,
         yPercent: -200,
         opacity: 0,
-        delay: .2,
+        duration: .4,
       }, 'cnt04-1')
+      .to(r_cnt04Tit, {
+        immediateRender: false,
+        yPercent: -200,
+        opacity: 0,
+        duration: .4,
+      }, 'cnt04-1')    
       .to(r_cnt04Li, {
         opacity: 0,
+        duration: .4,
       }, 'cnt04-1')
       .to(r_cnt04, {
         display: 'none',
+        duration: .4,
       }, 'cnt04-2')
   })
 })

@@ -187,7 +187,7 @@
   flex-direction: column;
 }
 
-.summary .cnt_area_right .cnt02 .sub_title p {
+.summary .cnt_area_right .cnt02 .sub_title > span {
   display: block;
   font-size: 50px;
   font-family: GowunBatang;
@@ -196,7 +196,7 @@
   overflow: hidden;
 }
 
-.summary .cnt_area_right .cnt02 .sub_title p span {
+.summary .cnt_area_right .cnt02 .sub_title span span {
   display: block;
 }
 
@@ -208,13 +208,12 @@
   overflow: hidden;
 }
 
-.summary .cnt_area_right .cnt02 .description p {
+.summary .cnt_area_right .cnt02 .description > span {
+  display: block;
   width: 60%;
   line-height: 1.4;
   overflow: hidden;
-}
-.summary .cnt_area_right .cnt02 .description p span{
-  display: block;
+  word-break: keep-all;
 }
 
 .summary .cnt_area_left .cnt03 {
