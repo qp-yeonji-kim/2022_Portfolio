@@ -91,7 +91,7 @@ $(function () {
     let triggerEl = $(this);
     let l_cnt01Wrap = $(this).find('.cnt_area_left .cnt_wrap');
     let l_cnt01 = $(this).find('.cnt_area_left .cnt_wrap .cnt01');
-    let r_cnt02 = $(this).find('.cnt_area_right .cnt02 .fade');
+    let r_cnt02 = $(this).find('.cnt_area_right .cnt02 .description p');
     let l_cnt03Cover01 = $(this).find('.cnt_area_left .cnt03 .img_cover01');
     let l_cnt03Cover02 = $(this).find('.cnt_area_left .cnt03 .img_cover02');
     let l_cnt03Wrap = $(this).find('.cnt_area_left .cnt03 .img_wrap');
@@ -99,7 +99,7 @@ $(function () {
     let r_cnt03Cover01 = $(this).find('.cnt_area_right .cnt03 .img_cover01');
     let l_cnt04 = $(this).find('.cnt_area_left .cnt04');
     let r_cnt03Cover02 = $(this).find('.cnt_area_right .cnt03 .img_cover02');
-    let r_cnt04Txt = $(this).find('.cnt_area_right .cnt04 .fade')
+    let r_cnt04Txt = $(this).find('.cnt_area_right .cnt04 .description p')
     let r_cnt04Li = $(this).find('.cnt_area_right .cnt04 li')
     let r_cnt04 = $(this).find('.cnt_area_right .cnt04');
 
@@ -128,7 +128,7 @@ $(function () {
       scrollTrigger: {
         trigger: triggerEl,
         start: 'top top',
-        end: '+=12000',
+        end: '+=9000',
         scrub: 1,
         pin: true,
       }
