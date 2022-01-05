@@ -65,12 +65,17 @@ header .contact_btn{
 .pagination {
   display: none;
   position: fixed;
-  left: -2%;
-  bottom: 14%;
+  left: 4%;
+  bottom: 5%;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 18px;
   z-index: 1000;
+  transform-origin: left;
   transform: rotate(-90deg);
+}
+
+.pagination >* {
+  float: left;
 }
 
 .pagination .page_wrap {
@@ -82,8 +87,6 @@ header .contact_btn{
   vertical-align: top;
 }
 
-.pagination .page_wrap span:nth-child(1) {}
-
 .pagination .page_wrap span:nth-child(2) {
   opacity: .8;
 }
@@ -93,6 +96,5 @@ header .contact_btn{
 }
 
 .pagination .page_name {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 18px;
 }

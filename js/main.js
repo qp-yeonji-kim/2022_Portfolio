@@ -1,84 +1,21 @@
 $(function () {
-  let introImg = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.sc_intro',
-      start: '1px top',
-      end: '+=2000',
-      scrub: 1,
-      pin: true,
-    }
-  })
-
-  introImg
-    .from('.sc_intro .img_wrap', {
-      opacity: 0,
-      yPercent: -50,
-      duration: 2,
-    })
-    .to('.sc_intro .img_wrap', {
-      opacity: 0,
-      yPercent: -50,
-      delay: .3,
-      duration: 2,
-    })
-
-  let introTitle = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.sc_intro',
-      start: "1px top",
-      end: '+=2000',
-      scrub: 1,
-      pin: true,
-    },
-  });
-
-  let introTxt = new SplitType('.sc_intro .title_area h2', {
-    types: 'words, chars',
-  });
-  introTitle.from(introTxt.chars, {
-      yPercent: 100,
-      stagger: 0.1,
-      duration: 2,
-    })
-    .to(introTxt.chars, {
-      yPercent: -100,
-      delay: .3,
-      duration: 2,
-    })
-
-  $('.sc_project .title_area > * span').each(function (index, item) {
-    let triggerEl = $(this).parents('section');
-
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerEl,
-        start: 'top top',
-        end: '+=2000',
-        scrub: 1,
-        pin: true,
-      }
-    });
-
-    tl.from(item, {
-        yPercent: 200,
-        opacity: 0,
-      })
-      .to(item, {
-        immediateRender: false,
-        yPercent: -200,
-        delay: .3,
-      })
-  });
-
   $(window).scroll(function () {
-    if ($(window).scrollTop() >= $('.first_int').offset().top) {
+    let first_intTop = $('.first_int').offset().top;
+    let second_intTop = $('.second_int').offset().top;
+    let third_intTop = $('.third_int').offset().top;
+    let curTop = $(window).scrollTop();
+
+    if (second_intTop > curTop && curTop >= first_intTop) {
       $('.pagination').css({
-        'display': 'flex'
+        'display': 'block'
       });
+      $('.pagination .cur').text('01');
       $('.pagination .page_name').text('PC Page_대한항공');
-    } else if ($(window).scrollTop() >= $('.second_int').offset().top) {
+    } else if (third_intTop > curTop && curTop >= second_intTop) {
+      $('.pagination .cur').text('02');
       $('.pagination .page_name').text('Mobile Page_이케아');
-    } else if ($(window).scrollTop() >= $('.third_int').offset().top) {
+    } else if (curTop >= third_intTop) {
+      $('.pagination .cur').text('03');
       $('.pagination .page_name').text('Responsible Page_나이키');
     } else {
       $('.pagination').css({
@@ -87,26 +24,95 @@ $(function () {
     }
   })
 
-  $('.summary').each(function (index, item) {
-    let triggerEl = $(this);
-    let l_cnt01Wrap = $(this).find('.cnt_area_left .cnt_wrap');
-    let l_cnt01 = $(this).find('.cnt_area_left .cnt_wrap .cnt01');
-    let r_cnt02 = $(this).find('.cnt_area_right .cnt02 span');
-    let l_cnt03Cover01 = $(this).find('.cnt_area_left .cnt03 .img_cover01');
-    let l_cnt03Cover02 = $(this).find('.cnt_area_left .cnt03 .img_cover02');
-    let l_cnt03Wrap = $(this).find('.cnt_area_left .cnt03 .img_wrap');
-    let r_cnt03 = $(this).find('.cnt_area_right .cnt03');
-    let r_cnt03Cover01 = $(this).find('.cnt_area_right .cnt03 .img_cover01');
-    let l_cnt04 = $(this).find('.cnt_area_left .cnt04');
-    let r_cnt03Cover02 = $(this).find('.cnt_area_right .cnt03 .img_cover02');
-    let r_cnt04Tit = $(this).find('.cnt_area_right .cnt04 .title_wrap span')
-    let r_cnt04Txt = $(this).find('.cnt_area_right .cnt04 .description span')
-    let r_cnt04Li = $(this).find('.cnt_area_right .cnt04 li')
-    let r_cnt04 = $(this).find('.cnt_area_right .cnt04');
+  let introImg = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.sc_title',
+      start: '1px top',
+      end: '+=2000',
+      scrub: 1,
+      pin: true,
+    }
+  })
+
+  introImg
+    .from('.sc_title .img_wrap', {
+      opacity: 0,
+      yPercent: -50,
+      duration: 2,
+    })
+    .to('.sc_title .img_wrap', {
+      opacity: 0,
+      yPercent: -50,
+      delay: .3,
+      duration: 2,
+    })
+
+  let introTitle = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.sc_title',
+      start: "1px top",
+      end: '+=2000',
+      scrub: 1,
+      pin: true,
+    },
+  });
+
+  let introTxt = new SplitType('.sc_title .title_area h2', {
+    types: 'words, chars',
+  });
+  introTitle.from(introTxt.chars, {
+      yPercent: 100,
+      stagger: 0.1,
+      duration: 3,
+    })
+    .to(introTxt.chars, {
+      yPercent: -100,
+      delay: .3,
+      duration: 3,
+    })
+
+  $('.sc_project').each(function (index, item) {
+    let sc_intro = $(this).find('.sc_intro');
+    let sc_intro_span = $(this).find('.sc_intro .title_area > * span');
+    let sc_summary = $(this).find('.sc_summary');
+    let l_cnt01Wrap = sc_summary.find('.cnt_area_left .cnt_wrap');
+    let l_cnt01 = sc_summary.find('.cnt_area_left .cnt_wrap .cnt01');
+    let r_cnt02 = sc_summary.find('.cnt_area_right .cnt02 span');
+    let l_cnt03Cover01 = sc_summary.find('.cnt_area_left .cnt03 .img_cover01');
+    let l_cnt03Cover02 = sc_summary.find('.cnt_area_left .cnt03 .img_cover02');
+    let l_cnt03Wrap = sc_summary.find('.cnt_area_left .cnt03 .img_wrap');
+    let r_cnt03 = sc_summary.find('.cnt_area_right .cnt03');
+    let r_cnt03Cover01 = sc_summary.find('.cnt_area_right .cnt03 .img_cover01');
+    let l_cnt04 = sc_summary.find('.cnt_area_left .cnt04');
+    let r_cnt03Cover02 = sc_summary.find('.cnt_area_right .cnt03 .img_cover02');
+    let r_cnt04Tit = sc_summary.find('.cnt_area_right .cnt04 .title_wrap span')
+    let r_cnt04Txt = sc_summary.find('.cnt_area_right .cnt04 .description span')
+    let r_cnt04Li = sc_summary.find('.cnt_area_right .cnt04 li')
+    let r_cnt04 = sc_summary.find('.cnt_area_right .cnt04');
+
+    let intro_tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sc_intro,
+        start: 'top top',
+        end: '+=2000',
+        scrub: 1,
+        pin: true,
+      }
+    });
+
+    intro_tl.from(sc_intro_span, {
+        yPercent: 200,
+        opacity: 0,
+      })
+      .to(sc_intro_span, {
+        immediateRender: false,
+        yPercent: -200,
+        delay: .3,
+      })
 
     gsap.to(l_cnt01Wrap, {
       scrollTrigger: {
-        trigger: triggerEl,
+        trigger: sc_summary,
         start: 'top bottom',
         end: 'bottom top',
         scrub: 1,
@@ -116,7 +122,7 @@ $(function () {
     })
     gsap.to(l_cnt01, {
       scrollTrigger: {
-        trigger: triggerEl,
+        trigger: sc_summary,
         start: 'top bottom',
         end: 'bottom top',
         scrub: .1,
@@ -124,9 +130,9 @@ $(function () {
       opacity: .9,
     })
 
-    let firstPjSum = gsap.timeline({
+    let sum_tl = gsap.timeline({
       scrollTrigger: {
-        trigger: triggerEl,
+        trigger: sc_summary,
         start: 'top top',
         end: '+=8000',
         scrub: 1,
@@ -134,7 +140,7 @@ $(function () {
       }
     })
 
-    firstPjSum
+    sum_tl
       .from(r_cnt02, {
         yPercent: 200,
         opacity: 0,
@@ -200,7 +206,7 @@ $(function () {
         yPercent: -200,
         opacity: 0,
         duration: .4,
-      }, 'cnt04-1')    
+      }, 'cnt04-1')
       .to(r_cnt04Li, {
         opacity: 0,
         duration: .4,
