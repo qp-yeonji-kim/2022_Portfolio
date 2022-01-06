@@ -3,6 +3,7 @@ $(function () {
     let first_intTop = $('.first_int').offset().top;
     let second_intTop = $('.second_int').offset().top;
     let third_intTop = $('.third_int').offset().top;
+    let footerTop = $('.sc_contact').offset().top;
     let curTop = $(window).scrollTop();
 
     if (second_intTop > curTop && curTop >= first_intTop) {
@@ -14,7 +15,7 @@ $(function () {
     } else if (third_intTop > curTop && curTop >= second_intTop) {
       $('.pagination .cur').text('02');
       $('.pagination .page_name').text('Mobile Page_이케아');
-    } else if (curTop >= third_intTop) {
+    } else if (footerTop > curTop && curTop >= third_intTop) {
       $('.pagination .cur').text('03');
       $('.pagination .page_name').text('Responsible Page_나이키');
     } else {
@@ -23,6 +24,15 @@ $(function () {
       });
     }
   })
+
+  $('header .menu_btn').on('click', function () {
+    $(this).toggleClass('on');
+    $('.nav').toggleClass('on');
+  });
+
+  $('.nav .gnb a').on('click', function () {
+    $('header .menu_btn, .nav').removeClass('on');
+  });
 
   let introImg = gsap.timeline({
     scrollTrigger: {
@@ -88,6 +98,7 @@ $(function () {
     let r_cnt04Tit = sc_summary.find('.cnt_area_right .cnt04 .title_wrap span')
     let r_cnt04Txt = sc_summary.find('.cnt_area_right .cnt04 .description span')
     let r_cnt04Li = sc_summary.find('.cnt_area_right .cnt04 li')
+    let r_cnt04Link = sc_summary.find('.cnt_area_right .cnt04 .link_renewal span')
     let r_cnt04 = sc_summary.find('.cnt_area_right .cnt04');
 
     let intro_tl = gsap.timeline({
@@ -181,24 +192,26 @@ $(function () {
       .to(r_cnt04, {
         display: 'flex',
       }, 'cnt03-2')
-      .from(r_cnt04Li, {
-        opacity: 0,
-      }, 'cnt03-3')
       .from(r_cnt04Tit, {
         yPercent: 200,
         opacity: 0,
-        duration: .4,
         stagger: 0.1,
+      }, 'cnt03-3')
+      .from(r_cnt04Li, {
+        opacity: 0,
       }, 'cnt03-3')
       .from(r_cnt04Txt, {
         yPercent: 200,
         opacity: 0,
-        duration: .4,
       }, 'cnt03-3')
-      .to(r_cnt04Txt, {
-        immediateRender: false,
+      .from(r_cnt04Link, {
+        yPercent: 200,
+      }, 'cnt03-3')
+      .to(r_cnt04Link, {
         yPercent: -200,
-        opacity: 0,
+      }, 'cnt04-1')
+      .to(r_cnt04Txt, {
+        yPercent: -200,
         duration: .4,
       }, 'cnt04-1')
       .to(r_cnt04Tit, {

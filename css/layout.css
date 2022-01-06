@@ -1,4 +1,4 @@
-body{
+body {
   font-family: GowunBatang, NtSans;
   font-weight: 400;
   font-style: normal;
@@ -6,7 +6,7 @@ body{
   color: #fff;
 }
 
-header{
+header {
   position: fixed;
   left: 50%;
   top: 56px;
@@ -16,7 +16,7 @@ header{
   transform: translateX(-50%);
 }
 
-header .menu_btn{
+header .menu_btn {
   position: absolute;
   left: 0;
   cursor: pointer;
@@ -25,7 +25,7 @@ header .menu_btn{
   color: #fff;
 }
 
-header .menu_btn i{
+header .menu_btn i {
   position: relative;
   display: block;
   width: 34px;
@@ -33,7 +33,8 @@ header .menu_btn i{
   border: 1px solid #fff;
   border-radius: 50%;
 }
-header .menu_btn i span{
+
+header .menu_btn i span {
   position: absolute;
   display: block;
   width: 16px;
@@ -41,25 +42,82 @@ header .menu_btn i span{
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
+  transition: all .2s;
 }
-header .menu_btn i span:first-child{
+
+header .menu_btn i span:first-child {
+  transform-origin: center;
   top: 40%;
 }
-header .menu_btn i span:last-child{
+
+header .menu_btn i span:last-child {
+  transform-origin: center;
   bottom: 40%;
 }
-header .menu_btn > span{
+
+header .menu_btn>span {
   margin-left: 20px;
   font-size: 14px;
 }
 
-header .contact_btn{
+header .menu_btn.on i span:first-child {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+header .menu_btn.on i span:last-child {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+header .contact_btn {
   position: absolute;
   right: 0;
   font-size: 14px;
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.nav {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 10%;
+  background-color: #0f0446;
+  z-index: 100;
+}
+
+.nav.on {
+  display: block;
+}
+
+.nav .gnb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav .gnb li a {
+  display: block;
+  font-size: 86px;
+  line-height: 2;
+  font-family: MapoDacapo;
+  transition: all .4s;
+}
+
+.nav .gnb li a span {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 30px;
+}
+
+.nav .gnb li a:hover,
+.nav .gnb li a:focus {
+  color: rgba(255, 255, 255, .6);
 }
 
 .pagination {
@@ -74,7 +132,7 @@ header .contact_btn{
   transform: rotate(-90deg);
 }
 
-.pagination >* {
+.pagination>* {
   float: left;
 }
 
@@ -98,3 +156,103 @@ header .contact_btn{
 .pagination .page_name {
   font-size: 18px;
 }
+
+.sc_contact{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/bg01.jpg') no-repeat center / cover;
+  background-attachment: fixed;
+}
+
+.sc_contact::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 1;
+}
+
+.sc_contact .content_area{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4%;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.sc_contact .content_area h2{
+  position: absolute;
+  font-size: 120px;
+  z-index: 10;
+}
+
+.sc_contact .content_wrap{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.sc_contact .content_wrap .contact_info{
+  width: 50%;
+}
+
+.sc_contact .content_wrap .contact_info p{
+  margin-bottom: 40px;
+}
+
+.sc_contact .content_wrap .contact_info p strong{
+  display: block;
+  line-height: 2;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sc_contact .content_wrap .contact_info p a{
+  position: relative;
+  display: block;
+  font-size: 18px;
+  color: rgba(255, 255, 255, .8);
+  transition: color .4s;
+}
+
+.sc_contact .content_wrap .contact_info p a::before, .sc_contact .content_wrap .contact_info p a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 1px;
+}
+
+.sc_contact .content_wrap .contact_info p a::before{
+  width: 100%;
+  background-color: rgba(255, 255, 255, .6);
+}
+
+.sc_contact .content_wrap .contact_info p a::after{
+  width: 0;
+  background-color: #fff;
+  transition: width .4s;
+}
+
+.sc_contact .content_wrap .contact_info p a:hover::after, .sc_contact .content_wrap .contact_info p a:focus::after{
+  width: 100%;
+}
+
+.sc_contact .content_wrap .contact_info p a:hover, .sc_contact .content_wrap .contact_info p a:focus{
+  color: #fff;
+}
+
+.sc_contact .content_wrap .introduce{
+  margin-top: 80px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+

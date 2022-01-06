@@ -396,7 +396,6 @@
   font-size: 50px;
   line-height: 1.4;
   font-style: italic;
-  overflow: hidden;
 }
 
 .sc_summary .cnt_area_right .cnt04 .title_wrap p {
@@ -415,16 +414,23 @@
   position: relative;
   line-height: 90px;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, .4);
+}
+
+.sc_summary .cnt_area_right .cnt04 .description ul li::before, .sc_summary .cnt_area_right .cnt04 .description ul li::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+}
+
+.sc_summary .cnt_area_right .cnt04 .description ul li::before {
+  width: 100%;
+  background-color: rgba(255, 255, 255, .4);
 }
 
 .sc_summary .cnt_area_right .cnt04 .description ul li::after {
-  content: '';
-  position: absolute;
   width: 0;
-  left: 0;
-  top: 100%;
-  height: 1px;
   background-color: #fff;
   transition: width .5s;
 }
@@ -446,4 +452,36 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 28px;
+}
+
+.sc_summary .cnt_area_right .cnt04 .link_renewal {
+  margin-top: 160px;
+  text-align: right;
+}
+
+.sc_summary .cnt_area_right .cnt04 .link_renewal a {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  padding: 8px 2px;
+  overflow: hidden;
+}
+
+.sc_summary .cnt_area_right .cnt04 .link_renewal a span{
+  display: block;
+}
+
+.sc_summary .cnt_area_right .cnt04 .link_renewal a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #fff;
+  transition: width .4s;
+}
+
+.sc_summary .cnt_area_right .cnt04 .link_renewal a:hover::after, .sc_summary .cnt_area_right .cnt04 .link_renewal a:focus::after {
+  width: 100%;
 }
