@@ -21,8 +21,8 @@
 
 .sc_title .img_wrap {
   position: absolute;
-  width: 130px;
-  height: 160px;
+  width: 6.770vw; /* 130px */
+  height: 8.333vw; /* 160px */
   left: 50%;
   transform: translateX(-50%);
   top: 18%;
@@ -45,7 +45,7 @@
   width: 100%;
   align-items: center;
   font-family: MapoDacapo;
-  font-size: 200px;
+  font-size: var(--h1);
   font-style: italic;
   line-height: 1.2;
   overflow: hidden;
@@ -107,10 +107,12 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 60%;
   font-family: MapoDacapo;
-  font-size: 120px;
+  font-size: var(--h2);
   line-height: 1.2;
   font-style: italic;
+  text-align: center;
 }
 
 .sc_intro .title_area>* {
@@ -120,7 +122,7 @@
 }
 
 .sc_intro .title_area h2 {
-  left: -20%;
+  left: -24%;
 }
 
 .sc_intro .title_area h2 span {
@@ -128,12 +130,15 @@
 }
 
 .sc_intro .title_area p:nth-child(2) {
-  text-align: center;
+  margin-bottom: 1.041vw;
+  font-family: SFProsDP;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
 }
 
 .sc_intro .title_area p:nth-child(3) {
-  text-align: right;
-  right: -20%;
+  right: -24%;
 }
 
 .sc_intro .title_area p span {
@@ -206,7 +211,7 @@
 
 .sc_summary .cnt_area_right .cnt02 .sub_title > span {
   display: block;
-  font-size: 50px;
+  font-size: var(--subTit);
   font-family: GowunBatang;
   line-height: 1.4;
   font-style: italic;
@@ -223,6 +228,7 @@
   justify-content: end;
   font-size: 18px;
   overflow: hidden;
+  word-break: keep-all;
 }
 
 .sc_summary .cnt_area_right .cnt02 .description > span {
@@ -393,7 +399,7 @@
 
 .sc_summary .cnt_area_right .cnt04 .title_wrap {
   font-family: GowunBatang;
-  font-size: 50px;
+  font-size: var(--subTit);
   line-height: 1.4;
   font-style: italic;
 }
@@ -412,7 +418,7 @@
 
 .sc_summary .cnt_area_right .cnt04 .description ul li {
   position: relative;
-  line-height: 90px;
+  line-height: 4;
   overflow: hidden;
 }
 
@@ -451,11 +457,11 @@
 .sc_summary .cnt_area_right .cnt04 .description ul li p .txt {
   display: inline-block;
   vertical-align: middle;
-  font-size: 28px;
+  font-size: var(--describInfo);
 }
 
 .sc_summary .cnt_area_right .cnt04 .link_renewal {
-  margin-top: 160px;
+  margin-top: 8.333vw;/* 160px */
   text-align: right;
 }
 

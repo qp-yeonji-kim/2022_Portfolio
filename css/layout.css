@@ -107,7 +107,7 @@ header .contact_btn {
 
 .nav .gnb li a {
   display: block;
-  font-size: 86px;
+  font-size: var(--menuLi);
   line-height: 2;
   font-family: MapoDacapo;
   transition: color .4s;
@@ -116,7 +116,7 @@ header .contact_btn {
 .nav .gnb li a span {
   display: inline-block;
   vertical-align: top;
-  font-size: 30px;
+  font-size: var(--menuNum);
 }
 
 .nav .gnb li a:hover,
@@ -131,7 +131,7 @@ header .contact_btn {
   bottom: 5%;
   font-size: 12px;
   line-height: 18px;
-  z-index: 1000;
+  z-index: 10;
   transform-origin: left;
   transform: rotate(-90deg);
 }
@@ -192,7 +192,11 @@ header .contact_btn {
 
 .sc_contact .content_area h2{
   position: absolute;
+  font-family: SFProsDP;
+  font-weight: 700;
   font-size: 120px;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
   z-index: 10;
 }
 

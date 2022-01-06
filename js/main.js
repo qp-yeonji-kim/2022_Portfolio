@@ -29,7 +29,7 @@ $(function () {
     $(this).toggleClass('on');
     $('.nav').toggleClass('on');
 
-    if($(this).hasClass('on')){
+    if ($(this).hasClass('on')) {
       let menuTxt = gsap.timeline();
       menuTxt.from('.nav .gnb li a', {
         yPercent: 100,

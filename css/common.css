@@ -1,13 +1,12 @@
 :root{
 	/* 1920기준 */
-	--font_18px: .9375vw;
-	--font_36px: 1.875vw;
-	--font_34px: 1.770vw;
-	--font_basic: 16px;
-	--font_small: 12px;
-	--font_s_btn: 8px;
-	--color_yellow: #ffdb00;
-	--color_blue: #0058a2;
+	--h1: 10.416vw; /* 200px */
+	--h2: 7.291vw; /* 140px */
+	--menuNum: 1.562vw; /* 30px */
+	--menuLi: 4.479vw; /* 86px */
+	--subTit: 2.604vw; /* 50px */
+	--describ: 0.9375vw; /* 18px */
+	--describInfo: 1.458vw;  /* 28px */
 	--color_black: #191919;
 	--color_white: #fdfdfd;
 }
@@ -54,6 +53,17 @@
 		url("../font/NotoSansKR-Bold.woff") format("woff"),
 		url("../font/NotoSansKR-Bold.woff2") format("woff2"),
 		url("../font/NotoSansKR-Bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: SFProsDP;
+	font-style: normal;
+	font-weight: 700;
+	src: url("../font/SFProDisplay-Bold.eot");
+	src: url("../font/SFProDisplay-Bold.eot#iefix") format("embedded-opentype"),
+		url("../font/SFProDisplay-Bold.woff") format("woff"),
+		url("../font/SFProDisplay-Bold.woff2") format("woff2"),
+		url("../font/SFProDisplay-Bold.otf") format("opentype");
 }
 
 
