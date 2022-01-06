@@ -28,9 +28,17 @@ $(function () {
   $('header .menu_btn').on('click', function () {
     $(this).toggleClass('on');
     $('.nav').toggleClass('on');
+
+    if($(this).hasClass('on')){
+      let menuTxt = gsap.timeline();
+      menuTxt.from('.nav .gnb li a', {
+        yPercent: 100,
+        duration: .4,
+      })
+    }
   });
 
-  $('.nav .gnb a').on('click', function () {
+  $('.nav .gnb a, header .contact_btn').on('click', function () {
     $('header .menu_btn, .nav').removeClass('on');
   });
 

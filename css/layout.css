@@ -101,12 +101,16 @@ header .contact_btn {
   transform: translateY(-50%);
 }
 
+.nav .gnb li{
+  overflow: hidden;
+}
+
 .nav .gnb li a {
   display: block;
   font-size: 86px;
   line-height: 2;
   font-family: MapoDacapo;
-  transition: all .4s;
+  transition: color .4s;
 }
 
 .nav .gnb li a span {
@@ -117,7 +121,7 @@ header .contact_btn {
 
 .nav .gnb li a:hover,
 .nav .gnb li a:focus {
-  color: rgba(255, 255, 255, .6);
+  color: rgba(255, 255, 255, .4);
 }
 
 .pagination {
