@@ -90,6 +90,10 @@
   background-image: url('../images/bg04.jpg');
 }
 
+.fourth_int {
+  background-image: url('../images/bg05.jpg');
+}
+
 .first_int_bg {
   background-image: url('../images/bg02.jpg');
 }
@@ -100,6 +104,10 @@
 
 .third_int_bg {
   background-image: url('../images/bg04.jpg');
+}
+
+.fourth_int_bg {
+  background-image: url('../images/bg05.jpg');
 }
 
 .sc_intro .title_area {

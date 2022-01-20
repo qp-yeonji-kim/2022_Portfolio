@@ -3,6 +3,7 @@ $(function () {
     let first_intTop = $('.first_int').offset().top;
     let second_intTop = $('.second_int').offset().top;
     let third_intTop = $('.third_int').offset().top;
+    let fourth_intTop = $('.fourth_int').offset().top;
     let footerTop = $('.sc_contact').offset().top;
     let curTop = $(window).scrollTop();
 
@@ -15,9 +16,12 @@ $(function () {
     } else if (third_intTop > curTop && curTop >= second_intTop) {
       $('.pagination .cur').text('02');
       $('.pagination .page_name').text('Mobile Page_이케아');
-    } else if (footerTop > curTop && curTop >= third_intTop) {
+    } else if (fourth_intTop > curTop && curTop >= third_intTop) {
       $('.pagination .cur').text('03');
       $('.pagination .page_name').text('Responsible Page_나이키');
+    } else if (footerTop > curTop && curTop >= fourth_intTop) {
+      $('.pagination .cur').text('04');
+      $('.pagination .page_name').text('Accessible Page_한국원자력연구원');
     } else {
       $('.pagination').css({
         'display': 'none'
