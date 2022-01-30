@@ -117,7 +117,7 @@ $(function () {
       scrollTrigger: {
         trigger: sc_intro,
         start: 'top top',
-        end: '+=2000',
+        end: '+=4000',
         scrub: 1,
         pin: true,
       }
@@ -157,7 +157,7 @@ $(function () {
       scrollTrigger: {
         trigger: sc_summary,
         start: 'top top',
-        end: '+=8000',
+        end: '+=20000',
         scrub: 1,
         pin: true,
       }
@@ -177,11 +177,9 @@ $(function () {
       })
       .to(l_cnt03Cover01, {
         width: '50%',
-        duration: .4,
       }, 'cnt03-1')
       .to(l_cnt03Cover02, {
         height: '50%',
-        duration: .4,
       }, 'cnt03-1')
       .to(r_cnt03, {
         display: 'block',
@@ -224,21 +222,17 @@ $(function () {
       }, 'cnt04-1')
       .to(r_cnt04Txt, {
         yPercent: -200,
-        duration: .4,
       }, 'cnt04-1')
       .to(r_cnt04Tit, {
         immediateRender: false,
         yPercent: -200,
         opacity: 0,
-        duration: .4,
       }, 'cnt04-1')
       .to(r_cnt04Li, {
         opacity: 0,
-        duration: .4,
       }, 'cnt04-1')
       .to(r_cnt04, {
         display: 'none',
-        duration: .4,
       }, 'cnt04-2')
   })
 })
