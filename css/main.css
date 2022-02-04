@@ -234,7 +234,7 @@
   margin-top: 40px;
   display: flex;
   justify-content: end;
-  font-size: 18px;
+  font-size: 24px;
   overflow: hidden;
   word-break: keep-all;
 }
@@ -242,7 +242,7 @@
 .sc_summary .cnt_area_right .cnt02 .description > span {
   display: block;
   width: 60%;
-  line-height: 1.4;
+  line-height: 1.6;
   overflow: hidden;
   word-break: keep-all;
 }
